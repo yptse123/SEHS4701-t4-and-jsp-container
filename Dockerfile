@@ -12,9 +12,11 @@ RUN java -XX:+PrintFlagsFinal -version 2>&1 | grep -q 'UseSVE' && \
 COPY pom.xml .
 COPY src ./src
 
+# Ensure the necessary directory structure
+RUN mkdir -p /app/target/classes
+
 # Run Maven to build the project
 RUN mvn clean package
-
 
 FROM tomcat:10.0
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/
