@@ -49,7 +49,7 @@ This command will build the Docker image and start the Tomcat server.
 Once the application is running, you can access it in your web browser at:
 
 ```
-http://localhost:8080/my-jsp-webapp/
+http://localhost:8080/
 ```
 
 ## Usage
